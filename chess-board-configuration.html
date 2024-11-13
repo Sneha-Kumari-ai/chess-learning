@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board Configuration</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Container for the content */
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Description styling */
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Chessboard container with labels */
+        .chessboard-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .chessboard {
+            width: 100%;
+            border: 3px solid #333;
+            border-radius: 8px;
+        }
+
+        /* Labels for chessboard sections */
+        .label {
+            position: absolute;
+            color: #fff;
+            font-weight: bold;
+            background-color: rgba(0, 128, 128, 0.8);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        /* Specific positioning of labels */
+        .label.center { top: 43%; left: 43%; } /* Center Squares */
+        .label.ranks { top: 95%; left: 40%; width: 100px; } /* Ranks */
+        .label.files { top: 45%; left: -15px; transform: rotate(-90deg); width: 100px; } /* Files */
+        .label.corners { top: -5%; left: -5%; width: 90px; } /* Corners */
+
+        /* More descriptions for each section */
+        .sections {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #008080;
+        }
+        body {
+            background-image: url('https://media.istockphoto.com/id/182807740/photo/chess-table.jpg?s=612x612&w=0&k=20&c=Z5Jq7qg6k0SbZk5D-eVFnh5GBGOtIbSz7dh8j6qTEdE='); /* Replace with your image path */
+            background-size: cover; /* Makes the background cover the whole screen */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chess Board Configuration</h1>
+        <p>The chessboard consists of 64 squares arranged in an 8x8 grid. Each square is either light or dark, and the board is divided into ranks (horizontal rows) and files (vertical columns). The squares are labeled with letters (a to h) for columns and numbers (1 to 8) for rows.</p>
+        
+        <!-- Chessboard image with labels -->
+        <div class="chessboard-container">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/002/537/828/small/modern-black-chess-board-with-letters-and-numbers-background-design-illustration-free-vector.jpg" alt="Chessboard" class="chessboard">
+            <span class="label center">Center Squares</span>
+            <span class="label ranks">Ranks</span>
+            <span class="label files">Files</span>
+            <span class="label corners">Corners</span>
+        </div>
+
+        <!-- Description of the chessboard sections -->
+        <div class="sections">
+            <p class="section-title">Ranks and Files:</p>
+            <p>Ranks are the rows numbered 1 to 8 from bottom to top, and files are the columns labeled a to h from left to right.</p>
+
+            <p class="section-title">Center Squares:</p>
+            <p>The four center squares (d4, d5, e4, and e5) are critical in chess, often controlled early in the game for better positioning.</p>
+
+            <p class="section-title">Corners and Edges:</p>
+            <p>The corners (a1, a8, h1, h8) and edges are strategic spots, especially for the rooks, which often control files and ranks along the edges.</p>
+        </div>
+    </div>
+</body>
+</html>

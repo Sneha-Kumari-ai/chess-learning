@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Learning</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling for body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Page header */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #4b4b8f;
+        }
+
+        /* Description */
+        p.description {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Chess pieces container */
+        .chess-pieces-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px; /* Limiting the container width */
+        }
+
+        /* Chess Piece */
+        .chess-piece {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 22%; /* 1/4th of the screen width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Piece image */
+        .chess-piece img {
+            width: 100%;
+            height: auto;
+            max-width: 150px; /* Ensures images don't exceed 150px width */
+            margin-bottom: 10px;
+        }
+
+        /* Piece name and movement description */
+        .chess-piece h2 {
+            font-size: 1.6em;
+            color: #008080;
+            margin-bottom: 5px;
+        }
+
+        .chess-piece p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        /* Button to play audio */
+        .play-audio-button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #008080;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+            box-shadow: 0 4px 15px rgba(0, 128, 128, 0.6);
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            p.description {
+                font-size: 1em;
+            }
+            .chess-piece h2 {
+                font-size: 1.3em;
+            }
+            .chess-piece img {
+                max-width: 120px; /* Smaller images on medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chess-piece {
+                max-width: 45%; /* 2 pieces per row on smaller screens */
+            }
+            .chess-piece img {
+                max-width: 100px; /* Further reduce image size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chess-piece {
+                max-width: 90%; /* 1 piece per row on mobile screens */
+            }
+            .chess-piece img {
+                max-width: 80px; /* Even smaller images on mobile */
+            }
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5W3D_UXcIskV_6kMpoQ-67xmFjPvEG-YNog&s'); /* Replace with your image path */
+            background-size: cover; /* Makes the background cover the whole screen */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+    </style>
+</head>
+<body>
+    <h1>Chess Learning</h1>
+    <p class="description">Learn about each chess piece, how they move, and listen to descriptions of their unique abilities!</p>
+
+    <!-- Chess Pieces Container -->
+    <div class="chess-pieces-container">
+
+        <!-- Chess Piece: King -->
+        <div class="chess-piece">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGPtdjf1V_EUkO_yyEXhXfaRzN7b2BDPsg0g&s" alt="King">
+            <h2>King</h2>
+            <p>The King moves one square in any direction. It's the most important piece; protect it at all costs!</p>
+            <button class="play-audio-button" onclick="document.getElementById('king-audio').play()"> How King Moves</button>
+            <audio id="king-audio" src="king-move.mp3"></audio>
+        </div>
+
+        <!-- Chess Piece: Queen -->
+        <div class="chess-piece">
+            <img src="https://static.vecteezy.com/system/resources/previews/045/686/415/non_2x/black-queen-chess-piece-3d-concept-free-png.png" alt="Queen">
+            <h2>Queen</h2>
+            <p>The Queen can move any number of squares along a row, column, or diagonal. She is the most powerful piece.</p>
+            <button class="play-audio-button" onclick="document.getElementById('queen-audio').play()"> How Queen Moves</button>
+            <audio id="queen-audio" src="queen-move.mp3"></audio>
+        </div>
+
+        <!-- Chess Piece: Rook -->
+        <div class="chess-piece">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKowKQOFeOIyoypA6kS8DcIgtYVVmijz7nIw&s" alt="Rook">
+            <h2>Rook</h2>
+            <p>The Rook moves in straight lines along rows and columns. It is very powerful in open lines.</p>
+            <button class="play-audio-button" onclick="document.getElementById('rook-audio').play()"> How Rook Moves</button>
+            <audio id="rook-audio" src="rook-move.mp3"></audio>
+        </div>
+
+        <!-- Chess Piece: Bishop -->
+        <div class="chess-piece">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUrVofkmdmbbkuHzPnl6sslhJnr7XpYAmfzQ&s" alt="Bishop">
+            <h2>Bishop</h2>
+            <p>The Bishop moves diagonally, allowing it to cover only one color of squares throughout the game.</p>
+            <button class="play-audio-button" onclick="document.getElementById('bishop-audio').play()"> How Bishop Moves</button>
+            <audio id="bishop-audio" src="bishop-move.mp3"></audio>
+        </div>
+
+        <!-- Chess Piece: Knight -->
+        <div class="chess-piece">
+            <img src="https://static.vecteezy.com/system/resources/previews/045/686/348/non_2x/black-knight-chess-piece-3d-design-free-png.png" alt="Knight">
+            <h2>Knight</h2>
+            <p>The Knight moves in an ‘L’ shape: two squares in one direction and then one square perpendicular.</p>
+            <button class="play-audio-button" onclick="document.getElementById('knight-audio').play()"> How Knight Moves</button>
+            <audio id="knight-audio" src="knight-move.mp3"></audio>
+        </div>
+
+        <!-- Chess Piece: Pawn -->
+        <div class="chess-piece">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPCi0HtnndWIZzJJG4dckXMnwUiMhsvuosg&s" alt="Pawn">
+            <h2>Pawn</h2>
+            <p>The Pawn moves forward one square, but captures diagonally. It can move two squares forward on its first move.</p>
+            <button class="play-audio-button" onclick="document.getElementById('knight-audio').play()"> How Knight Moves</button>
+            <audio id="knight-audio" src="knight-move.mp3"></audio>
